@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cliente</title>
+</head>
+<body>
+  <h1>Cliente Web</h1>
+  <button onclick="fetchData()">Obtener mensaje del servidor</button>
+  <p id="response"></p>
+  <script>
+    async function fetchData() {
+      const response = await fetch('http://localhost:3000');
+      const text = await response.text();
+      document.getElementById('response').innerText = text;
+    }
+  </script>
+</body>
+</html>
